@@ -1,10 +1,15 @@
 package com.feeney.pk.Manager;
 
 import java.awt.event.KeyEvent;
+import java.awt.event.MouseEvent;
 
 public class Keys {
 	
 	public static final int NUM_KEYS = 12;
+
+	public static boolean mouseState = false;
+	public static boolean prevMouseState = false;
+	public static int mouseX, mouseY;
 	
 	public static boolean keyState[] = new boolean[NUM_KEYS];
 	public static boolean prevKeyState[] = new boolean[NUM_KEYS];
@@ -23,7 +28,6 @@ public class Keys {
 	public static int LEFT = 10;
 	public static int RIGHT = 11;
 
-	
 	public static void keySet(int i, boolean b) {
 		if     (i == KeyEvent.VK_W) keyState[W] = b;
 		else if(i == KeyEvent.VK_A) keyState[A] = b;
@@ -38,12 +42,25 @@ public class Keys {
 		else if(i == KeyEvent.VK_ESCAPE) keyState[ESCAPE] = b;
 		else if(i == KeyEvent.VK_F1) keyState[F1] = b;
 	}
+
+	public static void mouseSet(int x, int y, boolean b){
+		mouseState = b;
+		mouseX = x;
+		mouseY = y;
+	}
 	
 	public static void update() {
 		for(int i = 0; i < NUM_KEYS; i++) {
 			prevKeyState[i] = keyState[i];
 		}
+		prevMouseState = mouseState;
 	}
+
+	public static boolean isClicked() {return mouseState;}
+	public static boolean isClickedDown(){return mouseState && !prevMouseState;}
+
+	public static int getX(){return mouseX;	}
+	public static int getY(){return mouseY;	}
 	
 	public static boolean isPressed(int i) {
 		return keyState[i] && !prevKeyState[i];

@@ -109,9 +109,131 @@ public class Player extends GameObject {
 
 	}
 
-	public void shootUp(){
-		Pellet pel = new Pellet(0,(int)(x+.5),(int)(y+.5),gsm);
-
+//	public void shootUp(){
+//		Pellet pel = new Pellet(0,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//
+//	}
+//	public void shootRight(){
+//		Pellet pel = new Pellet(2,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+//	public void shootDown(){
+//		Pellet pel = new Pellet(4,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+//	public void shootLeft(){
+//		Pellet pel = new Pellet(6,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+//
+//	public void shootUpRight(){
+//		Pellet pel = new Pellet(1,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//
+//	}
+//	public void shootDownRight(){
+//		Pellet pel = new Pellet(3,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+//	public void shootDownLeft(){
+//		Pellet pel = new Pellet(5,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+//	public void shootUpLeft(){
+//		Pellet pel = new Pellet(7,(int)(x+.5),(int)(y+.5),gsm);
+//
+//		int i;
+//		for (i = 0; i < pellets.size(); i++){
+//			if(pellets.get(i) == null){
+//				pellets.set(i,pel);
+//				break;
+//			}
+//		}
+//
+//		if (i == pellets.size()){
+//			pellets.add(pel);
+//		}
+//	}
+	public void shoot(int xIn, int yIn){
+		Pellet pel = new Pellet(xIn,yIn,(int)(x+.5),(int)(y+.5),gsm);
 		int i;
 		for (i = 0; i < pellets.size(); i++){
 			if(pellets.get(i) == null){
@@ -123,116 +245,7 @@ public class Player extends GameObject {
 		if (i == pellets.size()){
 			pellets.add(pel);
 		}
-
 	}
-	public void shootRight(){
-		Pellet pel = new Pellet(2,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-	public void shootDown(){
-		Pellet pel = new Pellet(4,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-	public void shootLeft(){
-		Pellet pel = new Pellet(6,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-
-	public void shootUpRight(){
-		Pellet pel = new Pellet(1,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-
-	}
-	public void shootDownRight(){
-		Pellet pel = new Pellet(3,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-	public void shootDownLeft(){
-		Pellet pel = new Pellet(5,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-	public void shootUpLeft(){
-		Pellet pel = new Pellet(7,(int)(x+.5),(int)(y+.5),gsm);
-
-		int i;
-		for (i = 0; i < pellets.size(); i++){
-			if(pellets.get(i) == null){
-				pellets.set(i,pel);
-				break;
-			}
-		}
-
-		if (i == pellets.size()){
-			pellets.add(pel);
-		}
-	}
-
 
 
 

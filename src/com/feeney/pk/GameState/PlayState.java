@@ -95,33 +95,41 @@ public class PlayState extends GameState {
 		else if(Keys.isDown(Keys.S)){
 			movePlayerDown(player.getSpeed());
 		}
+//
+//		if (Keys.isPressed(Keys.UP) && Keys.isPressed(Keys.RIGHT)){
+//			player.shootUpRight();
+//		}
+//		else if (Keys.isPressed(Keys.UP) && Keys.isPressed(Keys.LEFT)){
+//			player.shootUpLeft();
+//		}
+//		else if (Keys.isPressed(Keys.DOWN) && Keys.isPressed(Keys.RIGHT)){
+//			player.shootDownRight();
+//		}
+//		else if (Keys.isPressed(Keys.DOWN) && Keys.isPressed(Keys.LEFT)){
+//			player.shootDownLeft();
+//		}
+//
+//		else if (Keys.isPressed(Keys.UP)){
+//			player.shootUp();
+//		}
+//
+//		else if (Keys.isPressed(Keys.DOWN)){
+//			player.shootDown();
+//		}
+//		else if (Keys.isPressed(Keys.LEFT)){
+//			player.shootLeft();
+//		}
+//		else if (Keys.isPressed(Keys.RIGHT)){
+//			player.shootRight();
+//		}
 
-		if (Keys.isPressed(Keys.UP) && Keys.isPressed(Keys.RIGHT)){
-			player.shootUpRight();
-		}
-		else if (Keys.isPressed(Keys.UP) && Keys.isPressed(Keys.LEFT)){
-			player.shootUpLeft();
-		}
-		else if (Keys.isPressed(Keys.DOWN) && Keys.isPressed(Keys.RIGHT)){
-			player.shootDownRight();
-		}
-		else if (Keys.isPressed(Keys.DOWN) && Keys.isPressed(Keys.LEFT)){
-			player.shootDownLeft();
+		if (Keys.isPressed(Keys.ENTER)){
+			this.gsm.setState(gsm.START);
 		}
 
-		else if (Keys.isPressed(Keys.UP)){
-			player.shootUp();
-		} 	
-
-		else if (Keys.isPressed(Keys.DOWN)){
-			player.shootDown();
-		} 
-		else if (Keys.isPressed(Keys.LEFT)){
-			player.shootLeft();
-		} 
-		else if (Keys.isPressed(Keys.RIGHT)){
-			player.shootRight();
-		} 
+		if(Keys.isClickedDown()){
+			player.shoot(Keys.getX(),Keys.getY());
+		}
 
 
 	}

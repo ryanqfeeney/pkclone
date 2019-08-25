@@ -7,16 +7,16 @@ import com.feeney.pk.Manager.Keys;
 import java.awt.Dimension;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
-import java.awt.event.KeyEvent;
-import java.awt.event.KeyListener;
+import java.awt.event.*;
 import java.awt.image.BufferedImage;
+import java.security.Key;
 
 import javax.swing.JPanel;
 
 
 
 @SuppressWarnings("serial")
-public class GamePanel extends JPanel implements Runnable, KeyListener {
+public class GamePanel extends JPanel implements Runnable, MouseMotionListener,MouseListener,KeyListener {
 	
 	// dimensions
 	// HEIGHT is the playing area size
@@ -53,6 +53,8 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		super.addNotify();
 		if(thread == null) {
 			addKeyListener(this);
+			addMouseListener(this);
+			addMouseMotionListener(this);
 			thread = new Thread(this);
 			thread.start();
 		}
@@ -94,7 +96,7 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 		}
 		
 	}
-	
+
 	// initializes fields
 	private void init() {
 		running = true;
@@ -131,5 +133,31 @@ public class GamePanel extends JPanel implements Runnable, KeyListener {
 	public void keyReleased(KeyEvent key) {
 		Keys.keySet(key.getKeyCode(), false);
 	}
-	
+
+	//mouse
+
+
+
+	public void mouseClicked(MouseEvent e) {
+		//Keys.mouseSet(e.getX(),e.getY(), true);
+
+	}
+
+	public void mouseExited(MouseEvent e) {
+	}
+	public void mouseEntered(MouseEvent e) {
+	}
+	public void mouseReleased(MouseEvent e) {
+		Keys.mouseSet(e.getX(),e.getY(),false);
+	}
+	public void mousePressed(MouseEvent e) {
+		Keys.mouseSet(e.getX(),e.getY(),true);
+	}
+
+	@Override
+	public void mouseDragged(MouseEvent e) {
+		Keys.mouseSet(e.getX(),e.getY(),true);
+	}
+	public void mouseMoved(MouseEvent e){};
+
 }

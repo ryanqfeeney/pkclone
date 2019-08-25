@@ -35,9 +35,7 @@ public abstract class GameState {
 		}
 
 		public void update(){
-			if (gsm.frame%30 == 0){
-				gsm.setState(gsm.PLAY);
-			}
+
 		}
 
 		public void draw(Graphics2D g){
